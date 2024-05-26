@@ -87,9 +87,7 @@ def main():
 
       if key_choice == "Your Key":
         API_Key = st.sidebar.text_input("First, enter your Gemini API key", type="password")
-        st.write("")
         st.sidebar.caption("No Gemini API key? Get yours [here!](https://aistudio.google.com/app/apikey)")
-        st.write("")
 
       elif key_choice == "Free Key (capped)": 
         API_Key = st.secrets["GOOGLE_API_KEY"]
