@@ -4,8 +4,6 @@ import time
 import tempfile
 import streamlit as st
 
-genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-
 #video_file_name = "big_buck_bunny_720p_20mb.mp4"
 #video_file_name = "WhatsApp Video 2024-05-26 at 6.08.12 PM.mp4"
 
@@ -77,6 +75,26 @@ def main():
           st.write(responce_text_from_gpt)
       else:
           st.error("Please upload a video file before submitting.")
+
+  with st.sidebar:
+      key_choice = st.sidebar.radio("",
+        (
+            "Your Key",
+            "Free Key (capped)",
+        ),
+        horizontal=True,
+       )
+
+      if key_choice == "Your Key":
+        API_Key = st.sidebar.text_input("First, enter your Gemini API key", type="password")
+        st.write("")
+        st.sidebar.caption("No Gemini API key? Get yours [here!](https://aistudio.google.com/app/apikey)")
+        st.write("")
+
+      elif key_choice == "Free Key (capped)": 
+        API_Key = st.secrets["GOOGLE_API_KEY"]
+      
+      genai.configure(api_key=API_Key)
 
 if __name__ == "__main__":
     main()
