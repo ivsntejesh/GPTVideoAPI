@@ -4,8 +4,7 @@ import time
 import tempfile
 import streamlit as st
 
-os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+genai.configure(api_key=st.secrets("GOOGLE_API_KEY"))
 
 #video_file_name = "big_buck_bunny_720p_20mb.mp4"
 #video_file_name = "WhatsApp Video 2024-05-26 at 6.08.12 PM.mp4"
