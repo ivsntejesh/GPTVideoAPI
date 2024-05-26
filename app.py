@@ -79,7 +79,7 @@ def main():
           st.error("Please upload a video file before submitting.")
 
   with st.sidebar:
-      key_choice = st.sidebar.radio("",
+      key_choice = st.sidebar.radio("Select an Option: ",
         (
             "Your Key",
             "Free Key (capped)",
@@ -88,7 +88,7 @@ def main():
        )
 
       if key_choice == "Your Key":
-        API_Key = st.sidebar.text_input("First, enter your Gemini API key", type="password", value="")
+        API_Key = st.sidebar.text_input("First, Enter your Gemini API key", type="password", value="")
         st.sidebar.caption("No Gemini API key? Get yours [here!](https://aistudio.google.com/app/apikey)")
 
       elif key_choice == "Free Key (capped)": 
