@@ -55,6 +55,8 @@ def ask_gpt(prompt, video):
 
 
 def main():
+  st.set_page_config(page_title="Prompt Video GPT")
+  st.title("Video Analysis Using Gemini API")
   # File uploader for video
   user_text = st.text_input("Enter your prompt, be as precise as possible:")
   uploaded_video = st.file_uploader("Choose a video...", type=["mp4", "mov", "avi", "mkv"])
