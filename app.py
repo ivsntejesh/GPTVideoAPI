@@ -24,7 +24,7 @@ def process_video(video):
       #st.write(f"Completed upload: {video_file.uri}")
 
       while video_file.state.name == "PROCESSING":
-          #print('Waiting for video to be processed.')
+          #print('Waiting for video to be processed....')
           st.text("Waiting for video to be processed.")
           time.sleep(10)
           video_file = genai.get_file(video_file.name)
